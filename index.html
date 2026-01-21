@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Solar System</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body >
+    <a-scene background="color: black" >
+
+      <!-- ASSETS -->
+      <a-assets>
+        <img id="sunTex" src="texture\2k_sun.jpg">
+        <img id="mercuryTex" src="texture\2k_mercury.jpg">
+        <img id="venusTex" src="texture\2k_venus_surface.jpg">
+        <img id="earthTex" src="texture\2k_earth_daymap.jpg">
+        <img id="marsTex" src="texture\2k_mars.jpg">
+        <img id="jupiterTex" src="texture\2k_jupiter.jpg">
+        <img id="saturnTex" src="texture\2k_saturn.jpg">
+        <img id="uranusTex" src="texture\2k_uranus.jpg">
+        <img id="neptuneTex" src="texture\2k_neptune.jpg">
+        <img id="stars" src="texture\2k_stars_milky_way.jpg" >
+        <img id="saturnRing" src="texture\2k_saturn_ring_alpha.png" >
+        <img id="venusAtmoTex" src="texture\2k_venus_atmosphere.jpg" >
+        <img id="moonTex" src="texture\2k_moon.jpg" >
+      </a-assets>
+
+      <a-entity position="0 1.7 10">
+        <a-entity camera look-controls wasd-controls></a-entity>
+      </a-entity>
+     
+      </a-entity>
+        <a-sky src="#stars">
+      </a-sky>
+      <a-entity>
+        <a-sphere position="0 0 0" radius="1" src="#sunTex" ></a-sphere>
+      </a-entity>
+
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear">
+        <a-sphere position="-2 0 0" radius="0.2" src="#mercuryTex">
+        </a-sphere>
+      </a-entity>
+
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7000; easing: linear">
+        <a-sphere position="-4 0 0" radius="0.2" src="#venusTex" ></a-sphere>
+        <a-sphere position="-4 0 0" radius="0.22" src="#venusAtmoTex" material="transparent: true; opacity: 0.6; side: double">
+        </a-sphere>
+      </a-entity>
+
+      <a-entity animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000; easing: linear">
+        <a-sphere position="-6 0 0" radius="0.2" src="#earthTex"></a-sphere>
+
+        <a-entity position="-6 0 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear">
+        <a-sphere position="-0.4 0 0" radius="0.07" src="#moonTex"
+              animation="property: rotation; to: 0 360 0; loop: true; dur: 1000; easing: linear">
+        </a-sphere>
+
+        </a-entity>
+      </a-entity>
+
+
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 11000; easing: linear">
+        <a-sphere position="-8 0 0" radius="0.2" src="#marsTex" ></a-sphere>
+      </a-entity>
+
+      <a-entity animation="property: rotation; to: 0 -360 0; loop: true; dur: 12000; easing: linear">
+        <a-sphere position="-10 0 0" radius="0.2" src="#jupiterTex" ></a-sphere>
+      </a-entity>
+
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear" >
+        <a-sphere position="-12 0 0" radius="0.2" src="#saturnTex" ></a-sphere>
+        <a-ring position="-12 0 0" rotation="90 0 0" radius-inner="0.6" radius-outer="1.0" src="#saturnRing" material="side: double;">
+        </a-ring>
+      </a-entity>
+
+      <a-entity animation="property: rotation; to: 0 -360 0; loop: true; dur: 17000; easing: linear">
+        <a-sphere position="-14 0 0" radius="0.2" src="#uranusTex" ></a-sphere>
+      </a-entity>
+
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear">
+        <a-sphere position="-16 0 0" radius="0.2" src="#neptuneTex" ></a-sphere>
+      </a-entity>
+
+
+    </a-scene>
+  </body>
+</html>
